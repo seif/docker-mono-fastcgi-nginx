@@ -15,6 +15,6 @@ ADD config/default /etc/nginx/sites-available/
 ADD config/fastcgi_params /etc/nginx/
 
 RUN chmod u+x /etc/service/nginx/run \
-    && chmod u+x /etc/service/fastcgi-mono/run
+    && chmod u+x /etc/service/fastcgi-mono-server4/run
 
 EXPOSE 80
