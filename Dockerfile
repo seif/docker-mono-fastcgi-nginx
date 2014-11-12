@@ -12,10 +12,7 @@ RUN apt-get update \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /var/tmp/* /tmp/* \
     && mkdir -p /etc/mono/registry /etc/mono/registry/LocalMachine \
-    && ln -sf /dev/stdout /var/log/nginx/access.log \
-    && ln -sf /dev/stderr /var/log/nginx/error.log \
-    && chmod u+x /etc/service/nginx/run \
-    && chmod u+x /etc/service/fastcgi-mono-server4/run
+    && find /etc/service/ -name run -exec chmod u+x {} \;
 
 ADD config/default /etc/nginx/sites-available/
 ADD config/fastcgi_params /etc/nginx/
