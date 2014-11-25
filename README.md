@@ -18,7 +18,7 @@ Then build your project, create a Dockerfile, copy the application to /var/www a
 
     FROM seif/docker-mono-fastcgi-nginx
     ADD buildOutput/website /var/www/
-    CMD ["/usr/sbin/runit-bootstrap"]
+    CMD ["/usr/sbin/runit_bootstrap"]
 
 Build your container
 

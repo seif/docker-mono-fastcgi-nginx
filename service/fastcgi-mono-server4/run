@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 exec 2>&1
 # http://www.hnwatcher.com/r/1539872/Using-Runit-in-a-Docker-Container
 source /etc/envvars
