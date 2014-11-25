@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# http://www.hnwatcher.com/r/1539872/Using-Runit-in-a-Docker-Container
+export > /etc/envvars
+exec /usr/sbin/runsvdir-start
