@@ -2,4 +2,4 @@
 exec 2>&1
 # http://www.hnwatcher.com/r/1539872/Using-Runit-in-a-Docker-Container
 source /etc/envvars
-exec /usr/bin/fastcgi-mono-server4 /applications=/:/var/www /socket=tcp:127.0.0.1:9000 /printlog=True
+exec /usr/bin/fastcgi-mono-server4 /applications=/:$APP_ROOT /socket=tcp:127.0.0.1:$FASTCGI_PORT /printlog=True
