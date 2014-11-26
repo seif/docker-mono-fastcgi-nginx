@@ -16,6 +16,10 @@ sed -i "s/<NGINX_PORT>/$NGINX_PORT/g" /etc/nginx/sites-available/default
 sed -i "s/<FASTCGI_PORT>/$FASTCGI_PORT/g" /etc/nginx/sites-available/default
 sed -i "s/<APP_ROOT>/$(echo $APP_ROOT | sed -e 's/\\/\\\\/g' -e 's/\//\\\//g' -e 's/&/\\\&/g')/g" /etc/nginx/sites-available/default
 
+
+echo "Running nginx on port $NGINX_PORT"
+echo "Running fastcgi-mono on port $FASTCGI_PORT"
+
 # http://www.hnwatcher.com/r/1539872/Using-Runit-in-a-Docker-Container
 export > /etc/envvars
 exec /usr/sbin/runsvdir-start
