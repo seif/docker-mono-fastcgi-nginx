@@ -1,6 +1,7 @@
-# The NGINX_PORT and APP_ROOT values are replaced by runit_bootstrap script which reads the values from environment variables with the same name
+# The NGINX_PORT, FASTCGI_PORT and APP_ROOT values are replaced by runit_bootstrap script which reads the values from environment variables with the same name
 # Default values set in bootstrap are:
 # NGINX_PORT: 80
+# FASTCGI_PORT: 9000
 # APP_ROOT: /var/www
 server {
 	listen <NGINX_PORT>;
@@ -8,7 +9,7 @@ server {
 	location / {
 		root <APP_ROOT>;
 		fastcgi_index /;
-		fastcgi_pass unix:/tmp/fastcgi.socket;
+		fastcgi_pass 127.0.0.1:<FASTCGI_PORT>;
 		include /etc/nginx/fastcgi_params;
 	}
 }
