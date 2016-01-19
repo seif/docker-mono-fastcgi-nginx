@@ -1,3 +1,7 @@
+# Deprecated.
+
+> This is no longer maintained as mono-fastcgi-server is no longer maintained and performance tests showed apache with mono perform better. If you have a legacy web app you want to run use [mono-apache](https://hub.docker.com/r/seif/mono-apache/) or [mono-nginx](https://hub.docker.com/r/seif/mono-nginx/) if you can self host the mono app.
+
 ## MONO Configured with runit Dockerfile
 
 This repository contains Dockerfile for publishing Docker's automated build to the public [Docker Hub Registry](https://registry.hub.docker.com/) with [Runit](http://smarden.org/runit/) as process with id 1 launching [nginx](http://wiki.nginx.org/Main) and [mono-fastcgi-server4](http://www.mono-project.com/docs/web/fastcgi/) as services and supervising them.
